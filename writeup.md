@@ -2,34 +2,6 @@
 
 ## Writeup
 
-### You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
-
----
-
-**Build a Traffic Sign Recognition Project**
-
-The goals / steps of this project are the following:
-* Load the data set (see below for links to the project data set)
-* Explore, summarize and visualize the data set
-* Design, train and test a model architecture
-* Use the model to make predictions on new images
-* Analyze the softmax probabilities of the new images
-* Summarize the results with a written report
-
-
-[//]: # "Image References"
-
-[image1]: ./examples/visualization.jpg "Visualization"
-[image2]: ./examples/grayscale.jpg "Grayscaling"
-[image3]: ./examples/random_noise.jpg "Random Noise"
-[image4]: ./examples/placeholder.png "Traffic Sign 1"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
-[speed_limit_80]: ./test_images/speed_limit_80.jpg "speed_limit_80"
-
----
 ### Data Set Summary & Exploration
 
 #### 1. Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
@@ -139,8 +111,8 @@ The following are the hyperparameters used:
 - Batch size: 128
 - Epoch : 30
 - Learning rate: 0.001
-- Standard deviation (sigma): 0.1
-- Mean: 0.0 
+- Standard Deviation (sigma): 0.1
+- Mean(mu): 0.0 
 
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
@@ -152,6 +124,8 @@ My final model results were:
   * **94.68 %**
 * test set accuracy of ? 
   * **94.49 %**
+
+As the training accuracy is higher than validation accuracy, it can be an appropriate result. The maximum validation accuracy obtained is **96.9%**. The test set accuracy of **94.49%** is not so low, so this architecture is suitable for the current problem.
 
 
 ### Test a Model on New Images
@@ -181,6 +155,7 @@ Here are ten German traffic signs that I found on the web:
 ![](./test_images/double_curve.jpg)
 
 6. Bumpy road
+   - This image can be hard to be recognized, because of the additional traffic sign below.
 
 ![](./test_images/bound_road.jpg)
 
@@ -224,7 +199,9 @@ The model was able to correctly guess 4 of the 10 traffic signs, which gives an 
 
 The code for making predictions on my final model is located in the 22th cell of the Ipython notebook.
 
-For the first image, the model is relatively sure that this is a road work sign (probability of 0.49), and the image does contain a road work sign. The top five soft max probabilities were below.
+For the first image, the model is relatively sure that this is a road work sign (probability of 0.49), and the image does contain a road work sign. The top five soft max probabilities were below. 
+
+Wild animals crossing signs were the most accurate probability (99.78%).
 
 |              True image               |                         Predictions                          |  Comment  |
 | :-----------------------------------: | :----------------------------------------------------------: | :-------: |
